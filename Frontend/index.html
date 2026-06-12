@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Collection</title>
+    <style>
+        /* RESET & BASICS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f0f0; /* Light Grey Background typical of App backgrounds */
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* HEADER */
+        header {
+            background: #fff;
+            padding: 20px 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #E60023; /* Pinterest Red */
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+
+        /* MASONRY GRID LAYOUT */
+        .masonry-grid {
+            display: column;
+            column-count: 4; /* Default: 4 columns */
+            column-gap: 20px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* CARD STYLING */
+        .pin-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 20px; /* Space between vertical items */
+            break-inside: avoid; /* Prevents card from splitting across columns */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .pin-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        /* IMAGE STYLING */
+        .pin-image {
+            width: 100%;
+            display: block;
+            height: auto; /* Maintains aspect ratio */
+            object-fit: cover;
+        }
+
+        /* CONTENT AREA */
+        .pin-content {
+            padding: 15px;
+        }
+
+        .pin-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .pin-price {
+            font-size: 14px;
+            font-weight: 600;
+            color: #767676;
+            margin-bottom: 10px;
+        }
+
+        /* OVERLAY BUTTONS (Save & Link) */
+        .save-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #E60023;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 14px;
+            opacity: 0; /* Hidden by default */
+            transition: opacity 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .pin-card:hover .save-button {
+            opacity: 1; /* Visible on hover */
+        }
+
+        /* RESPONSIVE COLUMNS */
+        @media (max-width: 1100px) { .masonry-grid { column-count: 3; } }
+        @media (max-width: 800px)  { .masonry-grid { column-count: 2; padding: 15px; } }
+        @media (max-width: 500px)  { .masonry-grid { column-count: 1; } }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="#" class="logo">Pinterest</a>
+    </header>
+
+    <!-- GRID CONTAINER -->
+    <div class="masonry-grid">
+
+        <!-- PROJECT 1 (Link: https://pin.it/1VDCQeDWb) -->
+        <div class="pin-card">
+            <!-- REPLACE THE SRC BELOW WITH YOUR IMAGE -->
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Project 1" class="pin-image">
+            
+            <button class="save-button">Save</button>
+            
+            <div class="pin-content">
+                <div class="pin-title">Red Sport Sneakers - Limited Edition</div>
+                <div class="pin-price">$129.00</div>
+            </div>
+        </div>
+
+        <!-- PROJECT 2 (Link: https://pin.it/3srpZa82U) -->
+        <div class="pin-card">
+            <!-- REPLACE THE SRC BELOW WITH YOUR IMAGE -->
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Project 2" class="pin-image">
+            
+            <button class="save-button">Save</button>
+            
+            <div class="pin-content">
+                <div class="pin-title">Premium Noise Cancelling Headphones</div>
+                <div class="pin-price">$249.00</div>
+            </div>
+        </div>
+
+        <!-- PROJECT 3 (Link: https://pin.it/1j5AOTdJv) -->
+        <div class="pin-card">
+            <!-- REPLACE THE SRC BELOW WITH YOUR IMAGE -->
+            <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Project 3" class="pin-image">
+            
+            <button class="save-button">Save</button>
+            
+            <div class="pin-content">
+                <div class="pin-title">Organic Plant Pot Set</div>
+                <div class="pin-price">$45.00</div>
+            </div>
+        </div>
+
+        <!-- PROJECT 4 (Link: https://pin.it/5pLKkdCEX) -->
+        <div class="pin-card">
+            <!-- REPLACE THE SRC BELOW WITH YOUR IMAGE -->
+            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Project 4" class="pin-image">
+            
+            <button class="save-button">Save</button>
+            
+            <div class="pin-content">
+                <div class="pin-title">Polaroid Instant Camera</div>
+                <div class="pin-price">$110.00</div>
+            </div>
+        </div>
+
+        <!-- PROJECT 5 (Link: https://pin.it/2uqooIqnm) -->
+        <div class="pin-card">
+            <!-- REPLACE THE SRC BELOW WITH YOUR IMAGE -->
+            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Project 5" class="pin-image">
+            
+            <button class="save-button">Save</button>
+            
+            <div class="pin-content">
+                <div class="pin-title">Minimalist Cotton T-Shirt</div>
+                <div class="pin-price">$25.00</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
